@@ -3,14 +3,16 @@
 
 const numOccurrences = parseInt(process.argv[2]); // Convert the first argument to an integer
 
-// Check if the argument is a valid positive number
-// This covers cases where no argument is passed (undefined), or it's not a number, or it's not positive.
+// This is the first allowed console.log
 if (isNaN(numOccurrences) || numOccurrences <= 0) {
-  console.log("Missing number of occurrences"); // First allowed console.log
+  console.log("Missing number of occurrences");
 } else {
-  let i = 0; // Initialize a counter for the loop
+  let i = 0;
+  let outputString = ""; // Build the string in a loop
   while (i < numOccurrences) {
-    console.log("C is fun"); // Second allowed console.log (this will be called multiple times by the loop)
-    i++; // Increment the counter
+    outputString += "C is fun\n"; // Append the message and a newline
+    i++;
   }
+  // This is the second allowed console.log, which prints the entire built string
+  console.log(outputString.trim()); // .trim() removes the last extra newline
 }
